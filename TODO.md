@@ -16,12 +16,12 @@ Then open http://localhost:8000 in your browser.
 - `data/` - JSON with git commands and notes
 
 ### Implementation Checklist
-- [ ] Scaffold the static site skeleton (`index.html`, `assets/`, `data/`)
-- [ ] Populate `data/` with grouped Git command JSON and brief notes
-- [ ] Render command categories and entries dynamically in `index.html`
-- [ ] Implement client-side search and filtering for commands
-- [ ] Add copy-to-clipboard buttons for every command snippet
-- [ ] Apply lightweight styling in `assets/` for readability and speed
-- [ ] Integrate optional offline/PWA support (manifest and service worker)
+- [x] Scaffold the static site skeleton (`index.html`, `assets/`, `data/`)
+- [x] Populate `data/` with grouped Git command JSON and brief notes
+- [x] Render command categories and entries dynamically in `index.html`
+- [x] Implement client-side search and filtering for commands
+- [x] Add copy-to-clipboard buttons for every command snippet
+- [x] Apply lightweight styling in `assets/` for readability and speed
+- [x] Integrate optional offline/PWA support (manifest and service worker)
 - [ ] Test in modern browsers and across key screen sizes
 - [ ] Document deployment for GitHub Pages, Netlify, or static hosting

@@ -1,0 +1,149 @@
+/* Basic layout */
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #1f1f1f 0%, #111 100%);
+  min-height: 100vh;
+}
+
+.app-header {
+  padding: 2.5rem 1.5rem 1rem;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.tagline {
+  margin: 0.5rem 0 1.5rem;
+  font-weight: 300;
+  color: #d8d8d8;
+}
+
+.search-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 0.75rem;
+  background-color: #1f1f1f;
+  color: inherit;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+
+.command-container {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.category {
+  background: rgba(18, 18, 18, 0.85);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+}
+
+.category-title {
+  margin: 0;
+  padding: 1.5rem 1.75rem 0.5rem;
+  font-size: 1.5rem;
+}
+
+.commands {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 1.75rem 1.75rem;
+}
+
+.command-card {
+  padding: 1rem 1.25rem;
+  border-radius: 0.85rem;
+  background-color: rgba(32, 32, 32, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.command-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.command-name {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.copy-btn {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: #ff6b6b;
+  color: #1f1f1f;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.copy-btn:hover,
+.copy-btn:focus-visible {
+  background-color: #ff8787;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.copy-btn.copied {
+  background-color: #12b886;
+  color: #101010;
+}
+
+.command-text {
+  display: inline-block;
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+  overflow-x: auto;
+}
+
+.command-description {
+  margin: 0;
+  color: #d0d0d0;
+  line-height: 1.4;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 700px) {
+  .command-container {
+    padding: 1rem 1rem 2.5rem;
+  }
+
+  .commands {
+    padding: 1rem 1.25rem 1.25rem;
+  }
+}

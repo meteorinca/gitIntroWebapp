@@ -1,0 +1,180 @@
+{
+  "updated": "2025-10-18",
+  "categories": [
+    {
+      "name": "Getting Started",
+      "commands": [
+        {
+          "name": "Initialize Repository",
+          "command": "git init",
+          "description": "Create a new Git repository in the current directory."
+        },
+        {
+          "name": "Clone Repository",
+          "command": "git clone <url>",
+          "description": "Download an existing repository (and its history) from a remote URL."
+        },
+        {
+          "name": "Set User Name",
+          "command": "git config --global user.name \"Your Name\"",
+          "description": "Configure the name Git associates with your commits."
+        },
+        {
+          "name": "Set User Email",
+          "command": "git config --global user.email you@example.com",
+          "description": "Configure the email Git associates with your commits."
+        }
+      ]
+    },
+    {
+      "name": "Saving Work",
+      "commands": [
+        {
+          "name": "Check Status",
+          "command": "git status",
+          "description": "Show modified, staged, and untracked files."
+        },
+        {
+          "name": "Stage File",
+          "command": "git add <path>",
+          "description": "Add file changes to the staging area in preparation for a commit."
+        },
+        {
+          "name": "Commit",
+          "command": "git commit -m \"Your message\"",
+          "description": "Create a new commit from staged changes with a short message."
+        },
+        {
+          "name": "Amend Commit",
+          "command": "git commit --amend",
+          "description": "Modify the most recent commit (message and staged content)."
+        }
+      ]
+    },
+    {
+      "name": "Branching",
+      "commands": [
+        {
+          "name": "List Branches",
+          "command": "git branch",
+          "description": "List all local branches and highlight the current one."
+        },
+        {
+          "name": "Create Branch",
+          "command": "git branch <branch>",
+          "description": "Create a new branch pointer at the current commit."
+        },
+        {
+          "name": "Switch Branch",
+          "command": "git switch <branch>",
+          "description": "Move HEAD to another branch (or create it with -c)."
+        },
+        {
+          "name": "Delete Branch",
+          "command": "git branch -d <branch>",
+          "description": "Remove a merged branch reference locally."
+        }
+      ]
+    },
+    {
+      "name": "Remote Workflows",
+      "commands": [
+        {
+          "name": "Add Remote",
+          "command": "git remote add origin <url>",
+          "description": "Connect the local repository to a remote named origin."
+        },
+        {
+          "name": "Fetch Updates",
+          "command": "git fetch",
+          "description": "Download new commits and refs from the remote without merging."
+        },
+        {
+          "name": "Pull",
+          "command": "git pull",
+          "description": "Fetch and merge remote changes into the current branch."
+        },
+        {
+          "name": "Push",
+          "command": "git push",
+          "description": "Upload local commits to the remote repository."
+        }
+      ]
+    },
+    {
+      "name": "Merging & Rebasing",
+      "commands": [
+        {
+          "name": "Merge Branch",
+          "command": "git merge <branch>",
+          "description": "Combine another branch's commits into the current branch."
+        },
+        {
+          "name": "Rebase",
+          "command": "git rebase <branch>",
+          "description": "Replay commits from the current branch onto another base."
+        },
+        {
+          "name": "Abort Merge/Rebase",
+          "command": "git merge --abort",
+          "description": "Stop the current merge and reset to the pre-merge state."
+        },
+        {
+          "name": "Continue Rebase",
+          "command": "git rebase --continue",
+          "description": "Resume an interactive rebase after resolving conflicts."
+        }
+      ]
+    },
+    {
+      "name": "Stashing",
+      "commands": [
+        {
+          "name": "Stash Changes",
+          "command": "git stash push -m \"work in progress\"",
+          "description": "Temporarily store dirty working tree changes."
+        },
+        {
+          "name": "List Stashes",
+          "command": "git stash list",
+          "description": "Show all stashed snapshots."
+        },
+        {
+          "name": "Apply Stash",
+          "command": "git stash apply <stash>",
+          "description": "Reapply a stash to the working tree and keep it in the list."
+        },
+        {
+          "name": "Drop Stash",
+          "command": "git stash drop <stash>",
+          "description": "Remove a stash entry from the stash list."
+        }
+      ]
+    },
+    {
+      "name": "Inspection & History",
+      "commands": [
+        {
+          "name": "View Log",
+          "command": "git log --oneline --graph --decorate",
+          "description": "Inspect commit history with a compact graph view."
+        },
+        {
+          "name": "Show Differences",
+          "command": "git diff",
+          "description": "Display unstaged changes between working tree and index."
+        },
+        {
+          "name": "Blame",
+          "command": "git blame <file>",
+          "description": "Show commit author and time for each line of a file."
+        },
+        {
+          "name": "Show Commit",
+          "command": "git show <commit>",
+          "description": "Inspect a specific commit (metadata and diff)."
+        }
+      ]
+    }
+  ]
+}

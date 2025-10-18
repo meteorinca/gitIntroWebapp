@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Intro Webapp</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Git Intro Webapp</h1>
+    <p class="tagline">Fast lookup for common Git commands</p>
+    <div class="search-wrapper">
+      <input id="searchInput" type="search" placeholder="Search commands or descriptions..." aria-label="Search commands" />
+    </div>
+  </header>
+
+  <main id="commandContainer" class="command-container" aria-live="polite"></main>
+
+  <template id="categoryTemplate">
+    <section class="category">
+      <h2 class="category-title"></h2>
+      <div class="commands"></div>
+    </section>
+  </template>
+
+  <template id="commandTemplate">
+    <article class="command-card">
+      <div class="command-header">
+        <h3 class="command-name"></h3>
+        <button class="copy-btn" type="button" aria-label="Copy command">Copy</button>
+      </div>
+      <code class="command-text"></code>
+      <p class="command-description"></p>
+    </article>
+  </template>
+
+  <script src="assets/js/app.js" type="module"></script>
+</body>
+</html>
