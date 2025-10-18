@@ -9,7 +9,7 @@ This project serves as a personal and classroom cheat sheet for Git basics. It p
 ## Quick Start
 
 ```bash
-git clone <your-repo-url> git-intro-webapp
+git clone https://github.com/meteorinca/gitIntroWebapp git-intro-webapp
 cd git-intro-webapp
 python -m http.server 8000
 ````
