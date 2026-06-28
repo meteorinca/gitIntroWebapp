@@ -29,9 +29,9 @@ If your computer breaks, your work is still safe on GitHub!
 
 ---
 
-## VSCode Makes it Easy
+## AntiGravity (Google's AI IDE) Makes it Easy
 
-No scary text commands needed! In VSCode, Git lives in the **Source Control** tab (the branch icon on the left).
+No scary text commands needed! In AntiGravity, Git lives in the **Source Control** tab (the branch icon on the left).
 
 ### The Magic Loop:
 1. **Edit** your files.
