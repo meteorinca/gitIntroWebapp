@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Git Intro Webapp</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Include marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
@@ -14,65 +17,10 @@
     <article class="git-article">
       <p class="eyebrow">Beginner Git Guide</p>
 
-      <h1>Git is Basically an Infinite Undo Button</h1>
-
-      <p class="subtitle">
-        And it is wireless saving for almost anything you make. It does not have to be code.
-      </p>
-
-      <p>
-        Imagine you are writing a book. You write a chapter, save it, then rewrite it completely.
-        A week later, you desperately want that original version back. Without Git, it may be gone
-        forever. With Git, you can go back to the old version, almost like it never disappeared.
-      </p>
-
-      <p>
-        Here is the mental model: Git takes a complete snapshot of your entire project whenever you
-        choose. Think of it like hitting save in a video game, except you get endless save slots that
-        you can jump back to at any time.
-      </p>
-
-      <p>
-        Messed up? Rewind. Want to try something wild without breaking what already works? Create a
-        parallel version, experiment freely, and either keep it or throw it away. No harm done.
-      </p>
-
-      <figure class="screenshot-slot">
-        <img src="assets/img/vscode-source-control.png" alt="VS Code Source Control screenshot" />
-        <figcaption>
-          Screenshot idea: VS Code Source Control panel showing changed files.
-        </figcaption>
-      </figure>
-
-      <p>
-        The wireless saving part means your work does not only live on your computer. Those snapshots
-        can be sent to a place like GitHub, so if your laptop has an unfortunate coffee accident, your
-        project history is still safe online.
-      </p>
-
-      <p>
-        You can grab a new computer, pull everything down, and get back to work from the same saved
-        history.
-      </p>
-
-      <figure class="screenshot-slot">
-        <img src="assets/img/vscode-github-publish.png" alt="VS Code GitHub publish screenshot" />
-        <figcaption>
-          Screenshot idea: VS Code button for publishing or pushing to GitHub.
-        </figcaption>
-      </figure>
-
-      <p>
-        The big idea is simple: Git lets you save your work, travel back in time, try risky changes
-        safely, and keep a copy online.
-      </p>
-
-      <figure class="screenshot-slot">
-        <img src="assets/img/vscode-commit-message.png" alt="VS Code commit message screenshot" />
-        <figcaption>
-          Screenshot idea: Writing a commit message in VS Code.
-        </figcaption>
-      </figure>
+      <!-- Container for the injected markdown -->
+      <div id="markdown-content" class="markdown-body">
+        <p>Loading content...</p>
+      </div>
     </article>
 
     <section class="bottom-command-gate">
@@ -88,12 +36,8 @@
         <p class="tagline">Fast lookup for common Git commands</p>
 
         <div class="search-wrapper">
-          <input
-            id="searchInput"
-            type="search"
-            placeholder="Search commands or descriptions..."
-            aria-label="Search commands"
-          />
+          <input id="searchInput" type="search" placeholder="Search commands or descriptions..."
+            aria-label="Search commands" />
         </div>
       </header>
 
@@ -139,5 +83,23 @@
   </script>
 
   <script src="assets/js/app.js" type="module"></script>
+  <script>
+    // Fetch and render the Markdown file
+    fetch('introtoGit.md')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(markdown => {
+        document.getElementById('markdown-content').innerHTML = marked.parse(markdown);
+      })
+      .catch(error => {
+        console.error('Error fetching markdown:', error);
+        document.getElementById('markdown-content').innerHTML = '<p>Error loading guide. Please try again later.</p>';
+      });
+  </script>
 </body>
+
 </html>
