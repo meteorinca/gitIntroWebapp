@@ -1,8 +1,8 @@
-![How Git Works](assets/img/gitintro.png)
-
-# What is Git?
+# What is Git Anyway?
 
 Git is your **infinite undo button** and **wireless save game**. It protects your work (code, websites, school projects) from "oops" moments!
+
+![How Git Works](assets/img/gitintro.png)
 
 The idea is simple:
 1. You work on your files.
@@ -29,7 +29,7 @@ If your computer breaks, your work is still safe on GitHub!
 
 ---
 
-## AntiGravity (Google's AI IDE) Makes it Easy
+## AntiGravity* (Google's AI IDE) Makes it Easy
 
 No scary text commands needed! In AntiGravity, Git lives in the **Source Control** tab (the branch icon on the left).
 
@@ -56,3 +56,9 @@ No scary text commands needed! In AntiGravity, Git lives in the **Source Control
 Git makes mistakes safe. You can try new things, break stuff, and experiment! If it goes bad, you just hit undo. 
 
 **Make changes. Save a checkpoint. Send it online. You got this!**
+
+
+*AntiGravity IDE is an Amazingly Useful Code Editor from Google. Download link:
+
+https://antigravity.google/product/antigravity-ide
+
