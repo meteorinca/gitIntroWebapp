@@ -7,16 +7,100 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
-  <header class="app-header">
-    <h1>Git Intro Webapp</h1>
-    <p class="tagline">Fast lookup for common Git commands</p>
-    <div class="search-wrapper">
-      <input id="searchInput" type="search" placeholder="Search commands or descriptions..." aria-label="Search commands" />
-    </div>
-  </header>
 
-  <main id="commandContainer" class="command-container" aria-live="polite"></main>
+<body>
+  <main class="article-page">
+
+    <article class="git-article">
+      <p class="eyebrow">Beginner Git Guide</p>
+
+      <h1>Git is Basically an Infinite Undo Button</h1>
+
+      <p class="subtitle">
+        And it is wireless saving for almost anything you make. It does not have to be code.
+      </p>
+
+      <p>
+        Imagine you are writing a book. You write a chapter, save it, then rewrite it completely.
+        A week later, you desperately want that original version back. Without Git, it may be gone
+        forever. With Git, you can go back to the old version, almost like it never disappeared.
+      </p>
+
+      <p>
+        Here is the mental model: Git takes a complete snapshot of your entire project whenever you
+        choose. Think of it like hitting save in a video game, except you get endless save slots that
+        you can jump back to at any time.
+      </p>
+
+      <p>
+        Messed up? Rewind. Want to try something wild without breaking what already works? Create a
+        parallel version, experiment freely, and either keep it or throw it away. No harm done.
+      </p>
+
+      <figure class="screenshot-slot">
+        <img src="assets/img/vscode-source-control.png" alt="VS Code Source Control screenshot" />
+        <figcaption>
+          Screenshot idea: VS Code Source Control panel showing changed files.
+        </figcaption>
+      </figure>
+
+      <p>
+        The wireless saving part means your work does not only live on your computer. Those snapshots
+        can be sent to a place like GitHub, so if your laptop has an unfortunate coffee accident, your
+        project history is still safe online.
+      </p>
+
+      <p>
+        You can grab a new computer, pull everything down, and get back to work from the same saved
+        history.
+      </p>
+
+      <figure class="screenshot-slot">
+        <img src="assets/img/vscode-github-publish.png" alt="VS Code GitHub publish screenshot" />
+        <figcaption>
+          Screenshot idea: VS Code button for publishing or pushing to GitHub.
+        </figcaption>
+      </figure>
+
+      <p>
+        The big idea is simple: Git lets you save your work, travel back in time, try risky changes
+        safely, and keep a copy online.
+      </p>
+
+      <figure class="screenshot-slot">
+        <img src="assets/img/vscode-commit-message.png" alt="VS Code commit message screenshot" />
+        <figcaption>
+          Screenshot idea: Writing a commit message in VS Code.
+        </figcaption>
+      </figure>
+    </article>
+
+    <section class="bottom-command-gate">
+      <p class="tiny-note">Need the actual commands?</p>
+      <button id="showCommandsBtn" class="show-commands-btn" type="button">
+        Open Git Command Search
+      </button>
+    </section>
+
+    <section id="gitCommandsPanel" class="commands-panel" hidden>
+      <header class="app-header">
+        <h2>Git Command Search</h2>
+        <p class="tagline">Fast lookup for common Git commands</p>
+
+        <div class="search-wrapper">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search commands or descriptions..."
+            aria-label="Search commands"
+          />
+        </div>
+      </header>
+
+      <main id="commandContainer" class="command-container" aria-live="polite"></main>
+    </section>
+
+  </main>
 
   <template id="categoryTemplate">
     <section class="category">
@@ -35,6 +119,24 @@
       <p class="command-description"></p>
     </article>
   </template>
+
+  <script>
+    const showCommandsBtn = document.getElementById("showCommandsBtn");
+    const gitCommandsPanel = document.getElementById("gitCommandsPanel");
+
+    showCommandsBtn.addEventListener("click", () => {
+      const isHidden = gitCommandsPanel.hasAttribute("hidden");
+
+      if (isHidden) {
+        gitCommandsPanel.removeAttribute("hidden");
+        showCommandsBtn.textContent = "Hide Git Command Search";
+        gitCommandsPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        gitCommandsPanel.setAttribute("hidden", "");
+        showCommandsBtn.textContent = "Open Git Command Search";
+      }
+    });
+  </script>
 
   <script src="assets/js/app.js" type="module"></script>
 </body>
