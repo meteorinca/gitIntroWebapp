@@ -21,6 +21,10 @@
       <div id="markdown-content" class="markdown-body">
         <p>Loading content...</p>
       </div>
+
+      <div class="slideshow-trigger-container" style="text-align: center; margin-top: 40px;">
+        <button id="showSlideshowBtn" class="show-commands-btn" type="button">View Screenshots</button>
+      </div>
     </article>
 
     <section class="bottom-command-gate">
@@ -99,7 +103,58 @@
         console.error('Error fetching markdown:', error);
         document.getElementById('markdown-content').innerHTML = '<p>Error loading guide. Please try again later.</p>';
       });
+
+    // Slideshow Logic
+    const slideshowImages = [
+      { src: 'assets/img/vscode-source-control.png', caption: 'VS Code Source Control Tab' },
+      { src: 'assets/img/vscode-commit-message.png', caption: 'Writing a Commit Message' },
+      { src: 'assets/img/vscode-commit-message2.png', caption: 'Commit Message Example' },
+      { src: 'assets/img/vscode-commit-message3.png', caption: 'Another Commit Message' },
+      { src: 'assets/img/vscode-github-publish.png', caption: 'Publishing to GitHub' },
+      { src: 'assets/img/vscode-github-publish2.png', caption: 'GitHub Publish Options' }
+    ];
+
+    let currentSlide = 0;
+    const slideshowModal = document.getElementById('slideshowModal');
+    const slideshowImg = document.getElementById('slideshowImg');
+    const slideshowCaption = document.getElementById('slideshowCaption');
+
+    document.getElementById('showSlideshowBtn').addEventListener('click', () => {
+      currentSlide = 0;
+      updateSlide();
+      slideshowModal.removeAttribute('hidden');
+    });
+
+    document.getElementById('closeSlideshowBtn').addEventListener('click', () => {
+      slideshowModal.setAttribute('hidden', '');
+    });
+
+    document.getElementById('prevSlideBtn').addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slideshowImages.length) % slideshowImages.length;
+      updateSlide();
+    });
+
+    document.getElementById('nextSlideBtn').addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slideshowImages.length;
+      updateSlide();
+    });
+
+    function updateSlide() {
+      slideshowImg.src = slideshowImages[currentSlide].src;
+      slideshowCaption.textContent = slideshowImages[currentSlide].caption;
+    }
   </script>
+
+  <!-- Slideshow Modal -->
+  <div id="slideshowModal" class="slideshow-modal" hidden>
+    <button id="closeSlideshowBtn" class="slideshow-close" aria-label="Close Slideshow">&times;</button>
+    <button id="prevSlideBtn" class="slideshow-nav prev" aria-label="Previous Slide">&#10094;</button>
+    <div class="slideshow-content">
+      <img id="slideshowImg" src="" alt="Slideshow Image" />
+      <div id="slideshowCaption" class="slideshow-caption"></div>
+    </div>
+    <button id="nextSlideBtn" class="slideshow-nav next" aria-label="Next Slide">&#10095;</button>
+  </div>
 </body>
 
 </html>
