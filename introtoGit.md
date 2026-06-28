@@ -1,8 +1,8 @@
-![How Git Works](assets/img/gitintro.png)
-
-# What is Git?
+# What is Git and Why I Need it?
 
 Git is your **infinite undo button** and **wireless save game**. It protects your work (code, websites, school projects) from "oops" moments!
+
+![How Git Works](assets/img/gitintro.png)
 
 The idea is simple:
 1. You work on your files.
