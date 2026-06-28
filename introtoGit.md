@@ -1,3 +1,5 @@
+![How Git Works](assets/img/gitintro.png)
+
 # What is Git?
 
 Git is your **infinite undo button** and **wireless save game**. It protects your work (code, websites, school projects) from "oops" moments!
