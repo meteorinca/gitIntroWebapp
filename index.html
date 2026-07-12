@@ -85,6 +85,17 @@
       }
     });
   </script>
+  <!-- Slideshow Modal -->
+  <div id="slideshowModal" class="slideshow-modal" hidden>
+    <button id="closeSlideshowBtn" class="slideshow-close" aria-label="Close Slideshow">&times;</button>
+    <button id="prevSlideBtn" class="slideshow-nav prev" aria-label="Previous Slide">&#10094;</button>
+    <div class="slideshow-content">
+      <img id="slideshowImg" src="" alt="Slideshow Image" />
+      <div id="slideshowCaption" class="slideshow-caption"></div>
+    </div>
+    <button id="nextSlideBtn" class="slideshow-nav next" aria-label="Next Slide">&#10095;</button>
+  </div>
+</body>
 
   <script src="assets/js/app.js" type="module"></script>
   <script>
@@ -144,17 +155,5 @@
       slideshowCaption.textContent = slideshowImages[currentSlide].caption;
     }
   </script>
-
-  <!-- Slideshow Modal -->
-  <div id="slideshowModal" class="slideshow-modal" hidden>
-    <button id="closeSlideshowBtn" class="slideshow-close" aria-label="Close Slideshow">&times;</button>
-    <button id="prevSlideBtn" class="slideshow-nav prev" aria-label="Previous Slide">&#10094;</button>
-    <div class="slideshow-content">
-      <img id="slideshowImg" src="" alt="Slideshow Image" />
-      <div id="slideshowCaption" class="slideshow-caption"></div>
-    </div>
-    <button id="nextSlideBtn" class="slideshow-nav next" aria-label="Next Slide">&#10095;</button>
-  </div>
 </body>
-
 </html>
